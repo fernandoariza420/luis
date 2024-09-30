@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y Recursos - Hotel Miriam</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .service-container img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .service-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-text ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .service-text table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .service-text table, .service-text th, .service-text td {
+            border: 1px solid #ddd;
+        }
+
+        .service-text th, .service-text td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 80%; 
+            margin: 20px auto; 
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: 8px;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/static/imagen1.PNG" alt="Logo del Hotel Miriam">
+        <nav>
+            <ul>
+                <li><a href="{{url_for('inicio')}}">Inicio</a></li>
+                <li><a href="{{url_for('nosotros')}}">Nosotros</a></li>
+                <li><a href="{{url_for('servicios')}}">Servicios</a></li>
+                <li><a href="{{url_for('eventos')}}">Hospedaje</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Servicios y Recursos del Hotel Miriam</h1>
+        
+        <section id="administrativos" class="service-container">
+            <img src="/static/imagen2.PNG" alt="Servicios Administrativos">
+            <div class="service-text">
+                <h2>Servicios Administrativos</h2>
+                <p>El Hotel Miriam ofrece una serie de servicios administrativos que aseguran el buen funcionamiento de la organización y la comodidad de nuestros huéspedes.</p>
+                <ul>
+                    <li>Gestión de Reservas.</li>
+                    <li>Servicios de Facturación y Cobros.</li>
+                    <li>Atención al Cliente 24/7.</li>
+                    <li>Gestión de Reclamaciones.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="recursos-humanos" class="service-container">
+            <img src="/static/imagen3.PNG" alt="Recursos Humanos">
+            <div class="service-text">
+                <h2>Recursos Humanos</h2>
+                <p>El equipo de Recursos Humanos del Hotel Miriam se encarga de gestionar todos los aspectos relacionados con el personal, asegurando que nuestros empleados estén altamente capacitados para ofrecer el mejor servicio.</p>
+                <ul>
+                    <li>Selección y Reclutamiento de Personal.</li>
+                    <li>Capacitación y Desarrollo Profesional.</li>
+                    <li>Política de Bienestar y Motivación.</li>
+                    <li>Evaluación del Desempeño.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="politica-salarial" class="service-container">
+            <img src="/static/imagen4.PNG" alt="Política Salarial">
+            <div class="service-text">
+                <h2>Política Salarial</h2>
+                <p>Contamos con una política salarial equitativa y competitiva que incentiva el buen desempeño y el compromiso de nuestros empleados.</p>
+                <ul>
+                    <li>Salarios Competitivos en el Sector.</li>
+                    <li>Bonificaciones por Desempeño.</li>
+                    <li>Incentivos para Capacitación y Desarrollo Profesional.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="inventario-habitaciones" class="service-container">
+            <img src="/static/imagen5.PNG" alt="Inventario de Habitaciones">
+            <div class="service-text">
+                <h2>Inventario de Habitaciones</h2>
+                <p>Nuestro inventario de habitaciones cuenta con opciones para todo tipo de clientes, desde habitaciones estándar hasta suites de lujo, todas completamente equipadas para una estancia confortable.</p>
+                <table>
+                    <tr>
+                        <th>Tipo de Habitación</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td>Habitación Estándar</td>
+                        <td>Cama doble, baño privado, Wi-Fi gratuito, aire acondicionado.</td>
+                        <td>$80 por noche</td>
+                    </tr>
+                    <tr>
+                        <td>Habitación con Dos Camas</td>
+                        <td>Cama king, sala de estar, baño privado, minibar.</td>
+                        <td>$150 por noche</td>
+                    </tr>
+                    <tr>
+                        <td>Habitación con Tres Camas</td>
+                        <td>Cama king, vistas panorámicas.</td>
+                        <td>$200 por noche</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <section id="galeria">
+            <h2>Galería</h2>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="/static/imagen6.PNG" alt="Galería 1">
+                    <img src="/static/imagen7.PNG" alt="Galería 2">
+                    <img src="/static/imagen8.PNG" alt="Galería 3">
+                    <img src="/static/imagen9.PNG" alt="Galería 4">
+                </div>
+                <div class="carousel-controls">
+                    <button onclick="moveSlide(-1)">&#10094;</button>
+                    <button onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Hotel Miriam. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-images img');
+            const totalSlides = slides.length;
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            const offset = -currentIndex * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
+
+

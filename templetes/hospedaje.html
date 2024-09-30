@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Hospedaje - Hotel Miriam</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="/static/images/imagen1.PNG" alt="Logo del Hotel Miriam">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="hospedaje.html">Hospedaje</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Reserva tu Estadía en el Hotel Miriam</h1>
+        <p>Complete el siguiente formulario con su información personal para realizar una reserva en nuestro hotel. Nuestro equipo se pondrá en contacto con usted a la mayor brevedad.</p>
+
+        <section id="info-hotel">
+            <h2>Información del Hotel</h2>
+            <ul>
+                <li><strong>Nombre del hotel:</strong> Hotel Miriam</li>
+                <li><strong>Categoría:</strong> Establecimiento de Alojamiento y Hospedaje</li>
+                <li><strong>Subcategoría:</strong> Hotel</li>
+                <li><strong>Departamento:</strong> Cesar</li>
+                <li><strong>Municipio:</strong> Valledupar</li>
+                <li><strong>Dirección:</strong> Cr 16 23 34 Brr Simon Bolivar</li>
+                <li><strong>Teléfono:</strong> 3128218234</li>
+                <li><strong>E-mail:</strong> hotellmiriam@hotmail.com</li>
+                <li><strong>Número de habitaciones:</strong> 16</li>
+                <li><strong>Número de camas:</strong> 24</li>
+            </ul>
+        </section>
+
+        <section id="formulario-reserva">
+            <h2>Formulario de Reservas</h2>
+            <form action="/enviar_reserva" method="POST">
+                <fieldset>
+                    <legend>Información Personal</legend>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalles de la Reserva</legend>
+                    <label for="checkin">Fecha de Check-in:</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Fecha de Check-out:</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="num-personas">Número de Personas:</label>
+                    <select id="num-personas" name="num-personas" required>
+                        <option value="1">1 Persona</option>
+                        <option value="2">2 Personas</option>
+                        <option value="3">3 Personas</option>
+                        <option value="4">4 Personas</option>
+                        <option value="5">5 o más Personas</option>
+                    </select>
+
+                    <label for="tipo-habitacion">Tipo de Habitación:</label>
+                    <select id="tipo-habitacion" name="tipo-habitacion" required>
+                        <option value="estandar">Habitación Estándar</option>
+                        <option value="ejecutiva">Suite Ejecutiva</option>
+                        <option value="presidencial">Suite Presidencial</option>
+                    </select>
+
+                    <label for="comentarios">Comentarios Adicionales:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+                </fieldset>
+
+                <input type="submit" value="Enviar Reserva">
+            </form>
+        </section>
+
+        <section id="mapa">
+            <h2>Ubicación del Hotel</h2>
+            <img src="/static/images/imagen7.PNG" alt="Mapa de ubicación del Hotel Miriam" style="width:100%;">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel Miriam. Todos los derechos reservados.</p>
+    </footer>
+</body>

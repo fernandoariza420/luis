@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Hotel Miriam - El mejor lugar para su hospedaje en Valledupar, donde ofrecemos un servicio de excelencia.">
+    <meta name="author" content="Fernando Ariza Rueda">
+    <title>Hotel Miriam - Inicio</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static', filename='imagen1.PNG')}}" alt="Logo del Hotel Miriam" id="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{{url_for('inicio')}}">Inicio</a></li>
+                <li><a href="{{url_for('nosotros')}}">Nosotros</a></li>
+                <li><a href="{{url_for('servicios')}}">Servicios</a></li>
+                <li><a href="{{url_for('eventos')}}">Hospedaje</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mision-vision" class="content-section">
+            <h1>Bienvenido al Hotel Miriam</h1>
+
+            <article class="mision">
+                <h2>Misión</h2>
+                <p>En el <strong>Hotel Miriam</strong>, nuestra misión es proporcionar un servicio de hospitalidad de excelencia que se distinga por su enfoque en el bienestar de nuestros huéspedes y por nuestra capacidad para crear experiencias inolvidables. Nos esforzamos por establecer un ambiente acogedor y seguro, 
+                sustentado en los más altos estándares de calidad, con un profundo compromiso con la cultura y tradiciones locales. Valoramos el respeto, la solidaridad y la inclusión como pilares fundamentales de nuestra operación diaria, buscando no solo satisfacer, sino superar las expectativas de nuestros clientes.</p>
+                <p>Nos comprometemos a ser un motor de desarrollo para la región de Valledupar, integrándonos activamente en la comunidad, apoyando el turismo sostenible, y promoviendo el respeto al medio ambiente. Ofrecemos un espacio de encuentro donde convergen el confort, la modernidad y la autenticidad cultural, 
+                creando un entorno que propicia el descanso, la productividad y la inspiración.</p>
+            </article>
+
+            <article class="vision">
+                <h2>Visión</h2>
+                <p>El <strong>Hotel Miriam</strong> aspira a convertirse en el principal referente en la industria hotelera de la región, reconocidos no solo por la calidad de nuestros servicios, sino por nuestra capacidad de innovar y adaptarnos a las necesidades cambiantes de nuestros huéspedes. En los próximos diez años, 
+                nuestra meta es liderar el mercado regional mediante la implementación de prácticas sostenibles y el uso de tecnología avanzada para optimizar la experiencia del cliente.</p>
+                <p>Buscamos posicionarnos como el hotel de preferencia para viajeros de negocios y turistas, ofreciendo un entorno que combine lujo, comodidad y responsabilidad social. Seremos reconocidos por nuestra capacidad para ofrecer experiencias personalizadas y por el impacto positivo que generaremos en el entorno, 
+                tanto a nivel económico como social. Nos esforzaremos por crear un lugar donde los visitantes se sientan parte de una gran familia, creando vínculos duraderos con nuestra comunidad y nuestros clientes.</p>
+                <p>A largo plazo, nuestro objetivo es expandir nuestra marca a nivel nacional, manteniendo nuestros valores fundacionales mientras crecemos en alcance y oferta, asegurando la satisfacción integral de quienes eligen el Hotel Miriam como su destino preferido.</p>
+            </article>
+
+            <article class="historia">
+                <h2>Nuestra Historia</h2>
+                <p>El <strong>Hotel Miriam</strong> fue fundado en el año 2012 como un pequeño establecimiento familiar, con el sueño de proporcionar un lugar cálido y hospitalario para los viajeros que visitaban Valledupar. Desde sus humildes comienzos, el hotel ha evolucionado para convertirse en un ícono de la hospitalidad 
+                en la región, manteniéndose fiel a sus raíces mientras se adapta a las nuevas demandas del mercado. Hoy en día, el Hotel Miriam es sinónimo de excelencia y tradición, con un legado de servicio que se transmite de generación en generación.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="social-media">
+            <a href="#"><img src="{{url_for('static', filename='facebook-icon.png')}}" alt="Facebook"></a>
+            <a href="#"><img src="{{url_for('static', filename='instagram-icon.png')}}" alt="Instagram"></a>
+            <a href="#"><img src="{{url_for('static', filename='twitter-icon.png')}}" alt="Twitter"></a>
+        </div>
+        <p>&copy; 2024 Hotel Miriam. Todos los derechos reservados.</p>
+        <p>Desarrollado por Fernando Ariza Rueda</p>
+    </footer>
+</body>
+
+</html>
+
+

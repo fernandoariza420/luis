@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Hospedaje - Hotel Miriam</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #004d00;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header img {
+            width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #28a745;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-hotel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-hotel ul li {
+            background: #004d00;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        form legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #28a745;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input, form select, form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        #mapa img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #004d00;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/static/imagen1.PNG" alt="Logo del Hotel Miriam">
+        <nav>
+            <ul>
+                <li><a href="{{url_for('inicio')}}">Inicio</a></li>
+                <li><a href="{{url_for('nosotros')}}">Nosotros</a></li>
+                <li><a href="{{url_for('servicios')}}">Servicios</a></li>
+                <li><a href="{{url_for('eventos')}}">Hospedaje</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Reserva tu Estadía en el Hotel Miriam</h1>
+        <p>Complete el siguiente formulario con su información personal para realizar una reserva en nuestro hotel. Nuestro equipo se pondrá en contacto con usted a la mayor brevedad.</p>
+
+        <section id="formulario-reserva">
+            <h2>Formulario de Reservas</h2>
+            <form action="/enviar_reserva" method="POST">
+                <fieldset>
+                    <legend>Información Personal</legend>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalles de la Reserva</legend>
+                    <label for="checkin">Fecha de Check-in:</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Fecha de Check-out:</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="num-personas">Número de Personas:</label>
+                    <select id="num-personas" name="num-personas" required>
+                        <option value="1">1 Persona</option>
+                        <option value="2">2 Personas</option>
+                        <option value="3">3 Personas</option>
+                        <option value="4">4 Personas</option>
+                        <option value="5">5 o más Personas</option>
+                    </select>
+
+                    <label for="tipo-habitacion">Tipo de Habitación:</label>
+                    <select id="tipo-habitacion" name="tipo-habitacion" required>
+                        <option value="estandar">Habitación Estándar</option>
+                        <option value="ejecutiva">Suite Ejecutiva</option>
+                        <option value="presidencial">Suite Presidencial</option>
+                    </select>
+
+                    <label for="comentarios">Comentarios Adicionales:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+                </fieldset>
+
+                <input type="submit" value="Enviar Reserva">
+            </form>
+        </section>
+
+        <section id="mapa">
+            <h2>Ubicación del Hotel</h2>
+            <img src="/static/imagen10.PNG" alt="Mapa de ubicación del Hotel Miriam">
+        </section>
+        <section id="mapa">
+            <h2>Imagen del Hotel</h2>
+            <img src="/static/imagen11.PNG" alt="Imagen del Hotel Miriam">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel Miriam. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
